@@ -21,6 +21,7 @@ class Settings(BaseSettings):
     TOKEN = os.getenv("TOKEN")
     API_URL = f"https://api.telegram.org/bot"
     CHAT_ID = os.getenv("CHAT_ID")
+    DATABASE_URL = os.getenv("DATABASE_URL")
 settings = Settings()
 from .utils.bot_utils import bot
 
