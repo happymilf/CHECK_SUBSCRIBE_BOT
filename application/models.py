@@ -1,4 +1,4 @@
-from .database import Base
+from .database import Base, engine
 
 from sqlalchemy import (
     Integer,
@@ -37,3 +37,6 @@ class PromoCode(Base):
     is_active : Column = Column(Boolean, default=False)
     
     counter : Column = Column(Integer)
+
+
+Base.metadata.create_all(bind=engine)

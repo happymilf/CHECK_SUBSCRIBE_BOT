@@ -83,3 +83,6 @@ def delete_promocode(promo_id : int, db : Session = SessionLocal()):
     db.commit()
     
     
+    
+def get_bot_text(field_name : str, db : SessionLocal()):
+    pass

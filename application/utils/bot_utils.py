@@ -52,7 +52,9 @@ async def promocode(message : types.Message):
         user = get_user_status(message.from_user.username)
         print(user)
         if promocode != "" and user == False:
-            await message.answer(get_data("promo") + f"\n{promocode}")
+            promocode_text = get_data("promo").replace("{promocode}", promocode)
+            await message.answer(promocode_text)
+            #get_data("promo") + f"\n{promocode}"
             change_user_status(username=message.from_user.username)
         else:
              await message.answer(get_data("already"))

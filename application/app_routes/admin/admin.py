@@ -23,7 +23,7 @@ router : APIRouter = APIRouter(
 @router.get("/")
 def admin_panel(request : Request):
 
-    change_data("greetings", "FUCK YOU")
+
     return RedirectResponse("/admin/users", status_code=302)
     # return template.TemplateResponse(
     #     "admin/admin.html",
@@ -48,7 +48,7 @@ async def admin_panel_change_user(user_id : int):
     change_user_status_byId(user_id)
     return RedirectResponse("/admin/users", status_code=303)
     
-@router.get("/promocodes", )
+@router.get("/promocodes" )
 async def admin_panel_promocodes(request : Request):
     promocodes = get_promocodes()
     return template.TemplateResponse(
@@ -69,7 +69,7 @@ async def admin_panel_uploadfile(file : UploadFile = File(...)):
 @router.get("/delete_promo/{promo_id}")
 def delete_promo(promo_id : int ):
     delete_promocode(promo_id=promo_id)
-    print("YES")
+
     return RedirectResponse("/admin/promocodes", status_code=302)
 
 
