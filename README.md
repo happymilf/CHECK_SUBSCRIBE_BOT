@@ -10,14 +10,6 @@
 <b>BASE_URL</b> = "https://localhost:8000"
 
 
-<h1>Перед запуском</h1>
-Перед запуском рекомендую удалить файлы миграции <b>"alembic/versions"</b>.
-
-В файле <b>alembic.ini</b> указать адрес базы данных. Например:
- 
-<b>sqlalchemy.url = sqlite:///app_database.db</b>
-
-Провести миграцию заново: <b>alembic revision --autogenerate -m "<Название миграции>"</b>
 
 
 <h1>Запуск сервера</h1>
